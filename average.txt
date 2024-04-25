@@ -1,8 +1,0 @@
-public class Average
-{
-    public static void main(String args[])
-    {
-        System.out.println("Sum of of 1, 2, 3, 4, and 5 = " + (1+2+3+4+5));
-        System.out.println("Average of 1, 2, 3, 4, and 5 = " + (1+2+3+4+5)/5.0);
-    }
-}
