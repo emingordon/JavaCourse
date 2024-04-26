@@ -1,0 +1,19 @@
+public class l3arr3 {
+    public static void main(String[] args) {
+        int[] numbers = {5, 10, 45, 20, 25};
+
+        double average = averageArray(numbers);
+        System.out.println("Average of the array elements: " + average);
+    }
+
+    public static double averageArray(int[] arr) {
+        double sum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        double average = sum / arr.length;
+
+        return average;
+    }
+}
