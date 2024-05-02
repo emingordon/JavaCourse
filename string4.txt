@@ -1,0 +1,8 @@
+public class String4 {
+    public static void main(String[] args) {
+        String Str = "Different";
+        System.out.println(Str.contains("Dif"));
+        System.out.println(Str.contains("lo"));
+        System.out.println(Str.contains("nt"));
+    }
+}
