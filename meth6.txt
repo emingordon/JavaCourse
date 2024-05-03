@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class meth6 {
+    public static void main(String[] args) {
+        calculator();
+    }
+
+    public static void calculator() {
+        double num1, num2;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Please enter the first number: ");
+
+        num1 = scanner.nextDouble();
+        System.out.print("Please enter second number: ");
+        num2 = scanner.nextDouble();
+
+        System.out.print("Please enter an operator (+, -, *, /): ");
+        char operator = scanner.next().charAt(0);
+
+        double output;
+
+        switch (operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                if (num2 != 0) {
+                    output = num1 / num2;
+                } else {
+                    System.out.println("Error: Division by zero");
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Error: Invalid operator");
+                return;
+        }
+
+        System.out.println(num1 + " " + operator + " " + num2 + " = " + output);
+
+        scanner.close();
+    }
+}
+
