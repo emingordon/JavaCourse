@@ -1,0 +1,46 @@
+abstract class Marks {
+    abstract float getPercentage();
+}
+
+class A extends Marks {
+    private float s1, s2, s3;
+
+    A(float s1, float s2, float s3) {
+        this.s1 = s1;
+        this.s2 = s2;
+        this.s3 = s3;
+    }
+
+    @Override
+    float getPercentage() {
+        return (s1 + s2 + s3) / 3.0f;
+    }
+}
+
+
+class B extends Marks {
+    private float s1, s2, s3, s4;
+
+    B(float s1, float s2, float s3, float s4) {
+        this.s1 = s1;
+        this.s2 = s2;
+        this.s3 = s3;
+        this.s4 = s4;
+    }
+
+    @Override
+    float getPercentage() {
+        return (s1 + s2 + s3 + s4) / 4.0f;
+    }
+}
+
+public class NewM {
+    public static void main(String[] args) {
+        A studentA = new A(20, 35, 50);
+        B studentB = new B(15, 50, 45, 40);
+
+        System.out.println("Percentage of  Student A: " + studentA.getPercentage() + "%");
+        System.out.println("Percentage of  Student B: " + studentB.getPercentage() + "%");
+    }
+}
+

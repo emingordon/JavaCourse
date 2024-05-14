@@ -1,8 +1,0 @@
-public class String5 {
-    public static void main(String[] args) {
-        char[] arr_num = new char[] { '2', '3', '4' };
-        String str = new String(arr_num);
-        System.out.println("The book contains " + str + " pages.");
-    }
-}
-
