@@ -1,0 +1,61 @@
+
+public class Book {
+    private String title;
+    private String author;
+    private String isbn;
+
+    public Book(String title, String author, String isbn) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", isbn='" + isbn + '\'' +
+                '}';
+    }
+
+    public static void main(String[] args) {
+        Book[] library = new Book[5];
+
+        library[0] = new Book("Dracula", "Bram Stoker", "3343577985489");
+        library[1] = new Book("Saving Private Ryan", "Max Allan Collins", "3343577985498");
+
+        removeBook(library, "3343577985489");
+
+        System.out.println("Remaining books in the library:");
+        for (Book book : library) {
+            if (book != null) {
+                System.out.println(book);
+            }
+        }
+    }
+
+    public static void removeBook(Book[] library, String isbnToRemove) {
+        for (int i = 0; i < library.length; i++) {
+            if (library[i] != null && library[i].getIsbn().equals(isbnToRemove)) {
+                System.out.println("Removing book: " + library[i]);
+                library[i] = null;
+                return;
+            }
+        }
+        System.out.println("Book ISBN " + isbnToRemove + " not found in the library.");
+    }
+}
+
