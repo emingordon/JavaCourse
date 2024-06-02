@@ -1,0 +1,25 @@
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class CurrentDateTimeInNewYork {
+
+    public static void main(String[] args) {
+        ZoneId newYorkZoneId = ZoneId.of("America/New_York");
+
+        ZonedDateTime newYorkDateTime = ZonedDateTime.now(newYorkZoneId);
+
+        LocalDate currentDateInNewYork = newYorkDateTime.toLocalDate();
+        LocalTime currentTimeInNewYork = newYorkDateTime.toLocalTime();
+
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+
+        String formattedTimeInNewYork = currentTimeInNewYork.format(timeFormatter);
+
+        System.out.println("Current date in New York: " + currentDateInNewYork);
+        System.out.println("Current time in New York: " + formattedTimeInNewYork);
+    }
+}
+
