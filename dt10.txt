@@ -1,12 +1,11 @@
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public class Fridays {
 
     public static void main(String[] args) {
-        LocalDate today = LocalDate.now();
-
-        LocalDate nextFriday = today.plusDays((11 - today.getDayOfWeek().ordinal()) % 7);
-        LocalDate previousFriday = today.minusDays((today.getDayOfWeek().ordinal() + 2) % 7);
+        LocalDate nextFriday = LocalDate.now().plusDays((DayOfWeek.FRIDAY.getValue() - LocalDate.now().getDayOfWeek().getValue() + 7) % 7);
+        LocalDate previousFriday = LocalDate.now().minusDays((LocalDate.now().getDayOfWeek().getValue() - DayOfWeek.FRIDAY.getValue() + 7) % 7);
 
         System.out.println("Next Friday: " + nextFriday);
         System.out.println("Previous Friday: " + previousFriday);
