@@ -1,0 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class FirstElement {
+    public static void main(String[] args) {
+        ArrayList<String> strings = new ArrayList<>(List.of("dark", "grey", "black"));
+        System.out.println(getFirstElement(strings));
+
+        ArrayList<String> emptryList = new ArrayList<>(List.of());
+        System.out.println(getFirstElement(emptryList));
+    }
+
+    public static String getFirstElement(ArrayList<String> list) {
+        return list.isEmpty() ? "" : list.get(0);
+    }
+}
+
