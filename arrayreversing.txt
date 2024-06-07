@@ -1,0 +1,14 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Arrays;
+
+public class ArrayReversing {
+
+    public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(5, 6, 7));
+        ArrayList<Integer> reversed = new ArrayList<>(numbers);
+        Collections.reverse(reversed);
+        System.out.println(reversed);
+    }
+}
+
