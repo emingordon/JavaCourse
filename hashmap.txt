@@ -1,0 +1,19 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapTest {
+    public static void main(String[] args) {
+        Map<String, Integer> map = new HashMap<>();
+
+        map.put("Ditrix", 30);
+        map.put("Zigmar", 25);
+
+        map.put("Ditrix", 31);
+
+        map.remove("Zigmar");
+
+        System.out.println("Ditrix's age: " + map.get("Ditrix"));
+
+        map.forEach((name, age) -> System.out.println(name + ": " + age));
+    }
+}

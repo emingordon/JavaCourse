@@ -1,0 +1,24 @@
+import java.util.EnumSet;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+enum Day {
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+}
+
+
+public class EnumSet {
+    public static void main(String[] args) {
+        EnumSet<Day> weekends = EnumSet.of(Day.SATURDAY, Day.SUNDAY);
+
+        List<Day> tasks = Arrays.asList(Day.MONDAY, Day.TUESDAY, Day.WEDNESDAY, Day.THURSDAY, Day.FRIDAY, Day.SATURDAY, Day.SUNDAY);
+
+        List<Day> workingDays = tasks.stream()
+                                     .filter(day -> !weekends.contains(day))
+                                     .collect(Collectors.toList());
+
+        workingDays.forEach(System.out::println);
+    }
+}
+
