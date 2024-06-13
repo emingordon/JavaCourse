@@ -1,0 +1,58 @@
+import java.util.*;
+
+class Student implements Comparable<Student> {
+    String name;
+    int age;
+    int id;
+
+    Student(String name, int age, int id) {
+        this.name = name;
+        this.age = age;
+        this.id = id;
+    }
+
+    @Override
+    public int compareTo(Student other) {
+        return Integer.compare(this.id, other.id);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", id=" + id +
+                '}';
+    }
+
+    static class AgeComparator implements Comparator<Student> {
+        @Override
+        public int compare(Student s1, Student s2) {
+            return Integer.compare(s1.age, s2.age);
+        }
+    }
+
+    static class NameComparator implements Comparator<Student> {
+        @Override
+        public int compare(Student s1, Student s2) {
+            return s1.name.compareTo(s2.name);
+        }
+    }
+
+    public static void main(String[] args) {
+        List<Student> students = Arrays.asList(
+                new Student("Fulkruq", 28, 5),
+                new Student("Zigfrid", 32, 3),
+                new Student("Waldemar", 24, 6)
+        );
+
+        Collections.sort(students, new AgeComparator());
+        System.out.println("Sorted by age:");
+        students.forEach(System.out::println);
+
+        Collections.sort(students, new NameComparator());
+        System.out.println("\nSorted by name:");
+        students.forEach(System.out::println);
+    }
+}
+
