@@ -1,0 +1,15 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Main {
+    public static void main(String[] args) {
+        List<String> strings = Arrays.asList("dark", "grape", "honey", "strong");
+
+        List<String> sortedList = strings.stream()
+                                        .sorted()
+                                        .collect(Collectors.toList());
+
+        System.out.println("Sorted list: " + sortedList);
+    }
+}
